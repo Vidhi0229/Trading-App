@@ -34,3 +34,12 @@ name = stock_data['name']
 close = float(close_price)
 opened = float(open_price)
 
+with open(f"{ticker}_data.txt", "w") as file:
+    file.write(f"Stock Name: {name}\n")
+    file.write(f"Exchange: {exchange}\n")
+    file.write(f"Currency: {currency}\n")
+    file.write(f"Open Price: {opened}\n")
+    file.write(f"High Price: {high_price}\n")
+    file.write(f"Low Price: {low_price}\n")
+    file.write(f"Close Price: {opened}\n")
+    file.write(f"Volume: {volume}\n")
