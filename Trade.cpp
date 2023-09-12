@@ -1,15 +1,16 @@
-
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <cstdlib>  
+#include<bits/stdc++.h>
 using namespace std;
+
 int main() {
+    int i = 0;
+    //double data;
+    map<string, string> company_Data;
+    vector <string> Key = {"Stock_Name", "Exchange", "Currency", "Open_Price", "High_Price", "Low_Price", "Close_Price", "Volume", "change", "Current_Price"};
     
-    cout << "Enter the stock symbol (ticker): ";
+    cout << "\nEnter the stock symbol (ticker): ";
     string ticker;
     cin >> ticker;
-    double current_Price;
+    
     cout << "\nFetch Market data....\n\n";
 
     string pythonCommand = "python3 Data.py " + ticker;
@@ -31,14 +32,22 @@ int main() {
     string line;
 
     
-    while (getline(file, line)) {
-        current_Price = stold(line);
+    while (getline(file, line)) {   
+
     }
     
     file.close();
 
-
-    //cout << stold(current_Price) << "\n";
+    // int commaPos = line.find(',', i);
+    // while (commaPos != string::npos){
+    //     string value = line.substr(i, commaPos - i);
+    //     company_Data.insert(make_pair(Key[i], value));
+    //     cout << value <<"\n";
+    //     i++;
+    // }
+    
+    
+    // //cout << stold(current_Price) << "\n";
 
     return 0;
 }

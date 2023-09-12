@@ -22,20 +22,14 @@ def get_stock_quote(ticker_symbol, api):
 stock_data = get_stock_quote(ticker, api_key)
 stock_price = get_price(ticker, api_key)
 
-exchange = stock_data['exchange']
-currency = stock_data['currency']
-open_price = stock_data['open']
-high_price = stock_data['high']
-low_price = stock_data['low']
-close_price = stock_data['close']
-volume = stock_data['volume']
-name = stock_data['name']
-change = stock_data['change']
-close = float(close_price)
-opened = float(open_price)
-priceValue = float(stock_price)
-
-print(f"Stock Name: {name}\nExchange: {exchange}\nCurrency: {currency}\nOpen Price: {opened}\nHigh Price: {high_price}\nLow Price: {low_price}\nClose Price: {opened}\nVolume: {volume}\nchange: {change}\nCurrent Price: {priceValue}\n")
-
 with open(f"{ticker}_data.txt", "w") as file:
-    file.write(f"{priceValue}")
+    file.write(f"{stock_data['name']},")
+    file.write(f"{stock_data['exchange']},")
+    file.write(f"{stock_data['currency']},")
+    file.write(f"{stock_data['open']},")
+    file.write(f"{stock_data['high']},")
+    file.write(f"{stock_data['low']},")
+    file.write(f"{stock_data['close']},")
+    file.write(f"{stock_data['volume']},")
+    file.write(f"{stock_data['change']},")
+    file.write(f"{stock_price}")

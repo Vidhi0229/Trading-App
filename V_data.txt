@@ -1,8 +1,0 @@
-Stock Name: Visa Inc
-Exchange: NYSE
-Currency: USD
-Open Price: 247.33
-High Price: 248.36000
-Low Price: 246.27000
-Close Price: 247.33
-Volume: 2331807

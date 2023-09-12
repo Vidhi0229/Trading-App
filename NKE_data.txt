@@ -1,9 +1,0 @@
-Stock Name: NIKE Inc
-Exchange: NYSE
-Currency: USD
-Open Price: 98.33
-High Price: 98.37500
-Low Price: 96.58000
-Close Price: 98.33
-Volume: 6247582
-change: -0.91000
