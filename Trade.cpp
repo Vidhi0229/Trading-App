@@ -9,9 +9,9 @@ int main() {
     cout << "Enter the stock symbol (ticker): ";
     string ticker;
     cin >> ticker;
-    double close = 0.0, opened = 0.0, percent;
+    double current_Price;
+    cout << "\nFetch Market data....\n\n";
 
-    
     string pythonCommand = "python3 Data.py " + ticker;
     int exitCode = system(pythonCommand.c_str());
 
@@ -32,10 +32,13 @@ int main() {
 
     
     while (getline(file, line)) {
-        cout << line << std::endl;
+        current_Price = stold(line);
     }
     
     file.close();
+
+
+    //cout << stold(current_Price) << "\n";
 
     return 0;
 }

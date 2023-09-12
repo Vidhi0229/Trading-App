@@ -30,16 +30,12 @@ low_price = stock_data['low']
 close_price = stock_data['close']
 volume = stock_data['volume']
 name = stock_data['name']
-
+change = stock_data['change']
 close = float(close_price)
 opened = float(open_price)
+priceValue = float(stock_price)
+
+print(f"Stock Name: {name}\nExchange: {exchange}\nCurrency: {currency}\nOpen Price: {opened}\nHigh Price: {high_price}\nLow Price: {low_price}\nClose Price: {opened}\nVolume: {volume}\nchange: {change}\nCurrent Price: {priceValue}\n")
 
 with open(f"{ticker}_data.txt", "w") as file:
-    file.write(f"Stock Name: {name}\n")
-    file.write(f"Exchange: {exchange}\n")
-    file.write(f"Currency: {currency}\n")
-    file.write(f"Open Price: {opened}\n")
-    file.write(f"High Price: {high_price}\n")
-    file.write(f"Low Price: {low_price}\n")
-    file.write(f"Close Price: {opened}\n")
-    file.write(f"Volume: {volume}\n")
+    file.write(f"{priceValue}")

@@ -1,0 +1,9 @@
+Stock Name: Camden National Corp
+Exchange: NASDAQ
+Currency: USD
+Open Price: 31.7
+High Price: 31.94000
+Low Price: 30.47000
+Close Price: 31.7
+Volume: 28873
+change: -1.20000

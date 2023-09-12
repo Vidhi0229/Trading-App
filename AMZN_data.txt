@@ -1,0 +1,9 @@
+Stock Name: Amazon.com Inc
+Exchange: NASDAQ
+Currency: USD
+Open Price: 138.75
+High Price: 143.62000
+Low Price: 138.64000
+Close Price: 138.75
+Volume: 56698900
+change: 4.87001
