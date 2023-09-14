@@ -22,7 +22,7 @@ void wantTransact(std::string ans, int amount, float price) {
         cin >> amount;
         cout << "\nThe stock cost: " << amount * price << "\n";
     } else if (ans == "N") {
-        cout << "\nHappy Trading\n";
+        cout << "\nHappy Trading!!!\n\n";
     } else {
         cout << "\nInvalid Choice\n";
     }
@@ -40,5 +40,5 @@ void print_data(std::string name, std::string exchange, std::string currency, fl
         "Close price: " << close << "\n" <<
         "Volume:" << volume << "\n" <<
         "Change: " << change << "\n" <<
-        "Current: " << price << "\n";
+        "Current Price: " << price << "\n";
 }
