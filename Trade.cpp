@@ -1,9 +1,11 @@
-#include <iostream>
-#include <string>
+#include<bits/stdc++.h>
 #include <curl/curl.h>
 #include <jsoncpp/json/json.h>
 using namespace std;
 void ProfitLoss(float open , float close, string name);
+void wantTransact(string ans, int amount, float price);
+void print_data(string name, string exchange, string currency, float open, float high, float low, float close, float volume, float change, float price);
+    
 
 const string api_key = "4cac4af5f73a405c9632e98cca7ef7f8";
 
@@ -101,14 +103,18 @@ Json::Value get_stock_quote(const string& ticker_symbol, const string& api) {
 }
 
 int main() {
-
+    string name, exchange, currency, ans;
+    float open, high, low, close, volume, change, price;
+    int amount;
     string ticker;
     cout << "Enter Ticker symbol of a company: ";
     cin >> ticker;
 
+
     string stock_price = get_price(ticker, api_key);
     if (!stock_price.empty()) {
-        string price = stock_price;
+        price = stof(stock_price);
+        cout << "Price: " << price << "\n";
         //cout << "Stock Price for " << ticker << ": " << stock_price << std::endl;
     } else {
         cerr << "Failed to fetch stock price." << std::endl;
@@ -118,21 +124,25 @@ int main() {
     Json::Value stock_data = get_stock_quote(ticker, api_key);
     if (!stock_data.empty()) {
         //std::cout << "Stock Quote for " << ticker << ": " << stock_quote.toStyledString() << std::endl;
-        string name = stock_data["name"].asString();
-        string exchange = stock_data["exchange"].asString();
-        string currency = stock_data["currency"].asString();
-        float open = stof(stock_data["open"].asString());
-        float high = stof(stock_data["high"].asString());
-        float low = stof(stock_data["low"].asString());
-        float close = stof(stock_data["close"].asString());
-        float volume = stof(stock_data["volume"].asString());
-        float change = stof(stock_data["change"].asString());
-        ProfitLoss(open , close, name);
+        name = stock_data["name"].asString();
+        exchange = stock_data["exchange"].asString();
+        currency = stock_data["currency"].asString();
+        open = stof(stock_data["open"].asString());
+        high = stof(stock_data["high"].asString());
+        low = stof(stock_data["low"].asString());
+        close = stof(stock_data["close"].asString());
+        volume = stof(stock_data["volume"].asString());
+        change = stof(stock_data["change"].asString());
     } else {
         cerr << "Failed to fetch stock quote." << endl;
         return 1;
     }
-    
+    print_data(name, exchange, currency, open, high, low, close, volume, change, price);
+    ProfitLoss(open , close, name);
+    cout << "Want to know the cost of buying or selling stock? Enter Y for yes and N for no\n";
+    cout << "Your Response: ";
+    cin >> ans;
+    wantTransact(ans, amount, price);
     return 0;
 }
 
@@ -142,35 +152,44 @@ void ProfitLoss(float open , float close, string name){
     float percentage_change = ((close - open) / open) * 100;
 
     if(percentage_change > 0){
-        cout << "The "+name+" stocks is in profit of "<< percentage_change <<"%\n";
+        cout << "\nThe "+name+" stocks is in profit of "<< percentage_change <<"%\n";
     }
     else if(percentage_change < 0){
-        cout << "The "+name+" stocks is in loss of "<< percentage_change <<"%\n";
+        cout << "\nThe "+name+" stocks is in loss of "<< percentage_change <<"%\n";
     }
     else{
-        cout << "The "+name+" stocks is in neutral state of "<< percentage_change <<"%\n";
+        cout << "\nThe "+name+" stocks is in neutral state of "<< percentage_change <<"%\n";
+    }
+
+}
+
+
+void wantTransact(string ans, int amount, float price){
+    transform(ans.begin(), ans.end(), ans.begin(), ::toupper);
+    if(ans == "YES" || "Y"){
+        cout << "Enter the amount of stock to know cost of stock: ";
+        cin >> amount;
+        cout << "The stock cost: "<< amount * price << "\n";
+    }
+    else if(ans == "NO" || "N"){
+        cout << "Happy Trading\n";
+    }
+    else{
+        cout << "Invalid Choice\n";
     }
 }
 
-void BuySell(){
-    while (true) {
-        cout << "Options:" << std::endl;
-        cout << "1. Buy stock" << std::endl;
-        cout << "2. Sell stock" << std::endl;
-        cout << "3. Quit" << std::endl;
-
-        int choice;
-        std::cin >> choice;
-
-        switch (choice) {
-            case 1:
-                
-            case 2:
-                
-            case 3:
-                
-            default:
-                std::cout << "Invalid choice. Try again." << std::endl;
-        }
-    }
+void print_data(string name, string exchange, string currency, float open, float high, float low, float close, float volume, float change, float price){
+    cout << "Generating Data....\n\n";
+    cout << 
+    "name: " << name << "\n" <<
+    "exchange: " << exchange << "\n" <<
+    "currency:" <<currency<<"\n"<<
+    "Open price: " << open <<"\n" << 
+    "High price: " << high<<"\n" <<
+    "Low price: " << low <<"\n" <<
+    "Close price: " << close << "\n" <<
+    "Volume:" << volume << "\n" << 
+    "Change: " << change << "\n" <<
+    "Current:" << price <<"\n";  
 }
