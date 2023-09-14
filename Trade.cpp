@@ -3,6 +3,7 @@
 #include <curl/curl.h>
 #include <jsoncpp/json/json.h>
 using namespace std;
+void ProfitLoss(float open , float close, string name);
 
 const string api_key = "4cac4af5f73a405c9632e98cca7ef7f8";
 
@@ -99,17 +100,16 @@ Json::Value get_stock_quote(const string& ticker_symbol, const string& api) {
     return root;
 }
 
-int main(int argc, char* argv[]) {
-    if (argc != 2) {
-        cerr << "Usage: ./fetch_stock_data <ticker>" << std::endl;
-        return 1;
-    }
+int main() {
 
-    string ticker = argv[1];
+    string ticker;
+    cout << "Enter Ticker symbol of a company: ";
+    cin >> ticker;
 
     string stock_price = get_price(ticker, api_key);
     if (!stock_price.empty()) {
-        cout << "Stock Price for " << ticker << ": " << stock_price << std::endl;
+        string price = stock_price;
+        //cout << "Stock Price for " << ticker << ": " << stock_price << std::endl;
     } else {
         cerr << "Failed to fetch stock price." << std::endl;
         return 1;
@@ -118,19 +118,59 @@ int main(int argc, char* argv[]) {
     Json::Value stock_data = get_stock_quote(ticker, api_key);
     if (!stock_data.empty()) {
         //std::cout << "Stock Quote for " << ticker << ": " << stock_quote.toStyledString() << std::endl;
-        //std::string name = stock_quote.toStyledString();
+        string name = stock_data["name"].asString();
         string exchange = stock_data["exchange"].asString();
         string currency = stock_data["currency"].asString();
-        string open = stock_data["open"].asString();
-        string high = stock_data["high"].asString();
-        string low = stock_data["low"].asString();
-        string close = stock_data["close"].asString();
-        string volume = stock_data["volume"].asString();
-        string change = stock_data["change"].asString();
+        float open = stof(stock_data["open"].asString());
+        float high = stof(stock_data["high"].asString());
+        float low = stof(stock_data["low"].asString());
+        float close = stof(stock_data["close"].asString());
+        float volume = stof(stock_data["volume"].asString());
+        float change = stof(stock_data["change"].asString());
+        ProfitLoss(open , close, name);
     } else {
         cerr << "Failed to fetch stock quote." << endl;
         return 1;
     }
-
+    
     return 0;
+}
+
+
+void ProfitLoss(float open , float close, string name){
+
+    float percentage_change = ((close - open) / open) * 100;
+
+    if(percentage_change > 0){
+        cout << "The "+name+" stocks is in profit of "<< percentage_change <<"%\n";
+    }
+    else if(percentage_change < 0){
+        cout << "The "+name+" stocks is in loss of "<< percentage_change <<"%\n";
+    }
+    else{
+        cout << "The "+name+" stocks is in neutral state of "<< percentage_change <<"%\n";
+    }
+}
+
+void BuySell(){
+    while (true) {
+        cout << "Options:" << std::endl;
+        cout << "1. Buy stock" << std::endl;
+        cout << "2. Sell stock" << std::endl;
+        cout << "3. Quit" << std::endl;
+
+        int choice;
+        std::cin >> choice;
+
+        switch (choice) {
+            case 1:
+                
+            case 2:
+                
+            case 3:
+                
+            default:
+                std::cout << "Invalid choice. Try again." << std::endl;
+        }
+    }
 }
