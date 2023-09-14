@@ -3,8 +3,7 @@
 #include <curl/curl.h>
 #include <string>
 using namespace std;
-// Global API key
-const string api_key = "4cac4af5f73a405c9632e98cca7ef7f8";
+
 
 // Callback function for cURL to handle the response
 size_t WriteCallback(void* contents, size_t size, size_t nmemb, std::string* output) {

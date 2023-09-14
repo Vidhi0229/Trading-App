@@ -32,3 +32,5 @@
 *.app
 
 Data.py
+
+config.json
