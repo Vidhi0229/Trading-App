@@ -15,7 +15,7 @@ C++ STL
 Download or clone this repo by using git clone https://github.com/Vidhi0229/Trading-App.git
 Enter the project folder and run locally by using a VS Code.
 
-## pre-requisites
+## Pre-requisites
 - Install curl library for making HTTP requests
 - Install JsonCpp library for JSON parsing and manipulation in C++
 - Sign up https://twelvedata.com/stocks to get your own API key
