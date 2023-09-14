@@ -21,6 +21,7 @@ def get_stock_quote(ticker_symbol, api):
 
 stock_data = get_stock_quote(ticker, api_key)
 stock_price = get_price(ticker, api_key)
+data = stock_data['name']
 
 with open(f"{ticker}_data.txt", "w") as file:
     file.write(f"{stock_data['name']},")
