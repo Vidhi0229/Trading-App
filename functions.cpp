@@ -15,20 +15,23 @@ void ProfitLoss(float open, float close, std::string name) {
     }
 }
 
-void wantTransact(std::string ans, int amount, float price) {
+void wantTransact(string ans, int amount, float price) {
+    cout << "Enter the amount of stock of buying selling limit: ";
+    cin >> amount;
+    cout << "\nWant to know the cost of buying or selling stock? Enter Y for yes and N for no\n";
+    cout << "Your Response: ";
+    cin >> ans;
     transform(ans.begin(), ans.end(), ans.begin(), ::toupper);
     if (ans == "Y") {
-        cout << "Enter the amount of stock to know the cost of stock: ";
-        cin >> amount;
         cout << "\nThe stock cost: " << amount * price << "\n";
     } else if (ans == "N") {
-        cout << "\nHappy Trading!!!\n\n";
+        cout << "\nOKAY\n\n";
     } else {
         cout << "\nInvalid Choice\n";
     }
 }
 
-void print_data(std::string name, std::string exchange, std::string currency, float open, float high, float low, float close, float volume, float change, float price) {
+void print_data(string name, string exchange, string currency, float open, float high, float low, float close, float volume, float change, float price) {
     cout << "\nGenerating Data....\n\n";
     cout <<
         "name: " << name << "\n" <<
@@ -41,4 +44,18 @@ void print_data(std::string name, std::string exchange, std::string currency, fl
         "Volume:" << volume << "\n" <<
         "Change: " << change << "\n" <<
         "Current Price: " << price << "\n";
+}
+
+void Sendsignal(float price, float high, float low, string ans, int amount){
+    if(price <= low){
+        cout << "Sending Buying signal\n\n";
+        wantTransact(ans, amount, price);
+    }
+    else if(price >= high){
+        cout << "Sending Selling signal\n\n";
+        wantTransact(ans, amount, price);
+    }
+    else{
+        cout << "Not suitable for buying and selling\nHappy Trading!!!\n\n";
+    }
 }
