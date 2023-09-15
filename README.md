@@ -1,10 +1,10 @@
 # Trading-App
 
-![Screenshot](./Output.png)
+![Screenshot](./output.png)
 
 A prototype of Trading app.
 
-Users gets real time data of company's stock from Ticker symbol and also get cost of stock from current price.
+Users gets real time data of company's stock from Ticker symbol over every 3 millisecond and if the stock price is suitable for buying and selling then it will send signal to buy or sell in stock according to user's limit of amount of stocks, User also get cost of stock from current price if signal send.
 
 ## Built With
 
