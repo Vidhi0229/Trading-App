@@ -3,8 +3,9 @@
 
 #include <string>
 #include <jsoncpp/json/json.h>
+using namespace std;
 
-std::string get_price(const std::string& ticker_symbol, const std::string& api);
-Json::Value get_stock_quote(const std::string& ticker_symbol, const std::string& api);
+string get_price(const string& ticker_symbol, const string& api);
+Json::Value get_stock_quote(const string& ticker_symbol, const string& api);
 
 #endif // CURL_FUNCTIONS_H
