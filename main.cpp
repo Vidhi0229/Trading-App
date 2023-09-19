@@ -30,17 +30,10 @@ int main() {
         int amount;
         
 
-        string stock_price = get_price(ticker, api_key);
-        if (!stock_price.empty()) {
-            price = stof(stock_price);
-        } else {
-            cerr << "Failed to fetch stock price." << endl;
-            return 1;
-        }
-
+        price = stof(get_price(ticker, api_key));
+        
         Json::Value stock_data = get_stock_quote(ticker, api_key);
         if (!stock_data.empty()) {
-            // std::cout << "Stock Quote for " << ticker << ": " << stock_quote.toStyledString() << std::endl;
             name = stock_data["name"].asString();
             exchange = stock_data["exchange"].asString();
             currency = stock_data["currency"].asString();
