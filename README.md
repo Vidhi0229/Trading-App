@@ -12,7 +12,7 @@ C++ STL
 
 ## Getting Started
 
-Download or clone this repo by using git clone https://github.com/Vidhi0229/Trading-App.git
+Clone this repo by using git clone 'https://github.com/Vidhi0229/Trading-App.git'
 Enter the project folder and run locally by using a VS Code with this command: g++ -o "output file name" main.cpp curl_functions.cpp functions.cpp -lcurl -ljsoncpp
 
 ## Pre-requisites
