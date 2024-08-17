@@ -84,9 +84,9 @@ Before running the Trading App, make sure you have the following prerequisites i
 
 ## Authors 👤
 **Vidhi Srivastava**
-[GitHub](https://github.com/Vidhi0229)
-[LinkedIn](https://www.linkedin.com/in/vidhisrivastava01/)
-[Open-Genus](https://iq.opengenus.org/author/vidhi/)
+- [GitHub](https://github.com/Vidhi0229)
+- [LinkedIn](https://www.linkedin.com/in/vidhisrivastava01/)
+- [Open-Genus](https://iq.opengenus.org/author/vidhi/)
 
 > For a deeper dive into this project, read my article [Trading Application in C++ - "Software Development Project with source code"](https://iq.opengenus.org/trading-application-in-cpp/) for a comprehensive overview and clear insights. 
 
