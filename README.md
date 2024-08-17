@@ -5,14 +5,14 @@ Welcome to the Trading App prototype! This application provides users with real-
 ![Screenshot](./output.png)
 
 ## Table of Contents
-- [Purpose of Implementation](#Purpose of Implementation)
-- [Project Implementation](#Project Implementation)
-    - [Project Structure](#Project Structure)
-- [Built With](#Built With)
-- [Getting Started](#Getting Started)
+- [Purpose of Implementation](#Purpose-of-Implementation)
+- [Project Implementation](#Project-Implementation)
+    - [Project Structure](#Project-Structure)
+- [Built With](#Built-With)
+- [Getting Started](#Getting-Started)
     - [Prerequisites](#Prerequisites)
 - [Authors](#Authors)
-- [Show Your Support](#Show Your Support)
+- [Show Your Support](#Show-Your-Support)
 - [Licence](#License)
 
 ## Purpose of Implementation
@@ -39,7 +39,7 @@ The trading application is organized into several files, each serving a specific
   - ProfitLoss(float open, float close, string name): Calculates and displays the profit or loss percentage for a stock.
   - wantTransact(string ans, int amount, float price): Handles user input for buying or selling stock and calculates the cost.
   - print_data(string name, string exchange, string currency, float open, float high, float low, float close, float volume, float change, float price): Prints detailed stock information.
-  - Sendsignal(float price, float high, float low, string ans, int amount): Determines whether to send a buying or selling signal based on stock price.
+  - Sendsignal(float price, float high, float low, string ans, int amount): Determines whether to send a buying or selling signal based on the stock price.
 
 - **main.cpp:** The main entry point of the application, where user interactions and the core logic of the program are implemented. This file:
   - Prompts the user for a ticker symbol.
@@ -57,21 +57,21 @@ To get started with the Trading App, follow these steps:
 
 1. Download or clone this repository using the following command:
 
-```git clone https://github.com/OpenGenus/trading-app-in-cpp.git```
+`git clone https://github.com/OpenGenus/trading-app-in-cpp.git`
 
 2. Navigate to the project folder.
 
 3. Compile the application using Visual Studio Code with the following command:
 
-```g++ -o "output/output file name" main.cpp curl_functions.cpp functions.cpp -lcurl -ljsoncpp```
+`g++ -o "output/output file name" main.cpp curl_functions.cpp functions.cpp -lcurl -ljsoncpp`
 
 4. Run the compiled application using the following command:
 
-```./output/output file```
+`./output/output file`
 
 5. Shortcut for running and compiling: Alternatively, you can use the shortcut script to simplify the compiling and running process.
 
-Run: ```./compile-and-run.sh```
+Run: `./compile-and-run.sh`
 
 ### Prerequisites
 Before running the Trading App, make sure you have the following prerequisites installed:
@@ -80,7 +80,7 @@ Before running the Trading App, make sure you have the following prerequisites i
 
 - **JsonCpp library:** Install the JsonCpp library for JSON parsing and manipulation in C++.
 
-- **API Key:** Sign up at Twelve Data to obtain your own API key. Place your API key in the config.json file.
+- **API Key:** Sign up at Twelve Data to obtain your API key. Place your API key in the config.json file.
 
 # Authors 👤
 **Vidhi Srivastava**
