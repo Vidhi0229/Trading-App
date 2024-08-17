@@ -11,9 +11,9 @@ Welcome to the Trading App prototype! This application provides users with real-
 - [Built With](#Built-With)
 - [Getting Started](#Getting-Started)
     - [Prerequisites](#Prerequisites)
-- [Authors](#Authors)
-- [Show Your Support](#Show-Your-Support)
-- [Licence](#License)
+- [Authors](#Authors-👤)
+- [Show Your Support](#Show-Your-Support-⭐️⭐️)
+- [Licence](#License-📝)
 
 ## Purpose of Implementation
 
@@ -82,7 +82,7 @@ Before running the Trading App, make sure you have the following prerequisites i
 
 - **API Key:** Sign up at Twelve Data to obtain your API key. Place your API key in the config.json file.
 
-# Authors 👤
+## Authors 👤
 **Vidhi Srivastava**
 [GitHub](https://github.com/Vidhi0229)
 [LinkedIn](https://www.linkedin.com/in/vidhisrivastava01/)
@@ -90,7 +90,7 @@ Before running the Trading App, make sure you have the following prerequisites i
 
 > For a deeper dive into this project, read my article [Trading Application in C++ - "Software Development Project with source code"](https://iq.opengenus.org/trading-application-in-cpp/) for a comprehensive overview and clear insights. 
 
-# Show Your Support ⭐️⭐️
+## Show Your Support ⭐️⭐️
 If you find this project helpful or interesting, please consider giving it a star!
 
 ## License 📝
